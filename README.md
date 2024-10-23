@@ -32,32 +32,19 @@ Node.js installed (version 14+)
 SQLite3 installed
 Postman or any tool to test the APIs (optional)
 
-Installation
+## Installation or How to run the app
 
-Clone the repository:
+- Clone our repository [https://github.com/Lokeshganni/personal-expense-tracker-server-node](https://github.com/Lokeshganni/personal-expense-tracker-server-node)
+- Open the code in your VS code, open Backend folder in the terminal by running cd personal-expense-tracker-server
+-Now run npm install or npm i which will install all the required packages of node
+- After installation, now run npm run server and  you will see `Server running at PORT 3000`
+- Now you see app running
 
-git clone https://github.com/your-username/personal-expense-tracker.git
-cd personal-expense-tracker-server
+## API Endpoints
 
-Install the dependencies:
+### User Authentication
 
-npm install
-
-Set up the SQLite database:
-
-Run the provided SQL queries from db.js to create the necessary tables.
-
-Run the application:
-
-npm start
-
-The server will start at http://localhost:3000.
-
-API Endpoints
-
-User Authentication
-
-1. Signup (Create a new user)
+#### 1. Signup (Create a new user)
 Endpoint: POST /signup
 Request Body:
 
