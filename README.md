@@ -1,27 +1,30 @@
-#Personal Expense Tracker API
+# Personal Expense Tracker API
 
-###Overview
+## Overview
 
 This is a RESTful API for managing personal financial records, such as incomes and expenses. Users can record their transactions, view past transactions, and get summarized reports by category or time period. The project also includes user authentication to link transactions to specific users.
 
-###Features
+## Features
 
-Add, update, delete, and retrieve income/expense transactions.
-Summarize total income, total expenses, and current balance.
-Optional filtering for summaries by date range and category.
-User authentication with JWT for protecting API routes.
-Pagination for retrieving large numbers of transactions.
-Reports for monthly spending by category.
+- Add, update, delete, and retrieve income/expense transactions.
+- Summarize total income, total expenses, and current balance.
+- Optional filtering for summaries by date range and category.
+- User authentication with JWT for protecting API routes.
+- Pagination for retrieving large numbers of transactions.
+- Reports for monthly spending by category.
 
-###Technologies Used
+## Technologies Used
 
-Backend Framework: Node.js with Express.js
-Database: SQLite
-Authentication: JWT (JSON Web Token)
+Backend Framework:
+- Node.js with Express.js
+Database:
+- SQLite
+Authentication:
+- JWT (JSON Web Token)
 
-Getting Started
+## Getting Started
 
-Prerequisites
+## Prerequisites
 
 Before you can run the project, you need the following:
 
@@ -29,32 +32,19 @@ Node.js installed (version 14+)
 SQLite3 installed
 Postman or any tool to test the APIs (optional)
 
-Installation
+## Installation or How to run the app
 
-Clone the repository:
+- Clone our repository [https://github.com/Lokeshganni/personal-expense-tracker-server-node](https://github.com/Lokeshganni/personal-expense-tracker-server-node)
+- Open the code in your VS code, open Backend folder in the terminal by running cd personal-expense-tracker-server
+-Now run npm install or npm i which will install all the required packages of node
+- After installation, now run npm run server and  you will see `Server running at PORT 3000`
+- Now you see app running
 
-git clone https://github.com/your-username/personal-expense-tracker.git
-cd personal-expense-tracker-server
+## API Endpoints
 
-Install the dependencies:
+### User Authentication
 
-npm install
-
-Set up the SQLite database:
-
-Run the provided SQL queries from db.js to create the necessary tables.
-
-Run the application:
-
-npm start
-
-The server will start at http://localhost:3000.
-
-API Endpoints
-
-User Authentication
-
-1. Signup (Create a new user)
+#### 1. Signup (Create a new user)
 Endpoint: POST /signup
 Request Body:
 
@@ -67,7 +57,7 @@ Response:
 201 Created if the user is successfully created.
 400 Bad Request if the username already exists.
 
-2. Login (Generate JWT token)
+#### 2. Login (Generate JWT token)
 Endpoint: POST /login
 Request Body:
 
@@ -85,7 +75,7 @@ All transaction-related routes require the user to be authenticated. Send the JW
 
 Authorization: Bearer <JWT_TOKEN>
 
-3. Add Transaction
+#### 3. Add Transaction
 Endpoint: POST /transactions
 Request Body:
 
@@ -101,7 +91,7 @@ Response:
 201 Created with the id of the newly created transaction.
 500 Internal Server Error on failure.
 
-4. Get All Transactions
+#### 4. Get All Transactions
 Endpoint: GET /transactions?page=1&limit=10
 
 Optional Query Parameters:
@@ -112,14 +102,14 @@ Response:
 200 OK with the list of transactions.
 500 Internal Server Error on failure.
 
-5. Get a Transaction by ID
+#### 5. Get a Transaction by ID
 Endpoint: GET /transactions/:id
 
 Response:
 200 OK with the transaction details.
 404 Not Found if the transaction does not exist.
 
-6. Update a Transaction
+#### 6. Update a Transaction
 Endpoint: PUT /transactions/:id
 Request Body (same as Add Transaction)
 
@@ -127,14 +117,14 @@ Response:
 200 OK if the transaction is updated.
 404 Not Found if the transaction does not exist.
 
-7. Delete a Transaction
+#### 7. Delete a Transaction
 Endpoint: DELETE /transactions/:id
 
 Response:
 200 OK if the transaction is deleted.
 404 Not Found if the transaction does not exist.
 
-8. Get Summary
+#### 8. Get Summary
 Endpoint: GET /summary?start_date=2024-01-01&end_date=2024-12-31&category=Salary
 
 Optional Query Parameters:
@@ -145,7 +135,7 @@ category: Filter by category.
 Response:
 200 OK with the total income, total expenses, and balance.
 
-9. Monthly Report
+#### 9. Monthly Report
 Endpoint: GET /report/monthly
 
 Response:
@@ -191,7 +181,7 @@ Content-Type: application/json
 GET http://localhost:3000/summary?start_date=2024-01-01&end_date=2024-12-31&category=Salary
 Authorization: Bearer <JWT_TOKEN>
 
-Project Structure
+## Project Structure
 
 ├── app.js               # Main application file
 ├── db.js                # Database configuration and queries
@@ -199,4 +189,3 @@ Project Structure
 ├── package.json         # Node.js dependencies and scripts
 ├── README.md            # API documentation
 └── app.http             # Optional HTTP file for testing
-
