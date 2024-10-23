@@ -36,8 +36,7 @@ Clone the repository:
 git clone https://github.com/your-username/personal-expense-tracker.git
 cd personal-expense-tracker-server
 
-Install the dependencies:
-
+## Install the dependencies:
 npm install
 
 Set up the SQLite database:

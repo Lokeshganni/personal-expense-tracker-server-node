@@ -3,8 +3,8 @@ POST http://localhost:3000/signup
 Content-Type: application/json
 
 {
-  "username": "lokeshganni",
-  "password": "lokesh123"
+  "username": "harishreyya",
+  "password": "harish123"
 }
 
 ### Login
@@ -12,8 +12,8 @@ POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-  "username": "lokesh",
-  "password": "lokesh123"
+  "username": "harishreyya",
+  "password": "harish123"
 }
 
 ### POST a Transaction
@@ -31,7 +31,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imxva
 
 ### GET Paginated Transactions 
 GET http://localhost:3000/transactions?page=1&limit=10
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imxva2VzaCIsImlhdCI6MTcyOTYyMTYxM30.JFMSnsv1N8uH3d1QTRbmRYnNmGAMkPKdPhQ9vlpMUtE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhcmlzaHJleXlhIiwiaWF0IjoxNzI5NjUzMjI5fQ.uR1P_o7M_1eYsUx2Zf1qzPK6tPnp92OUZrVDgaW9RNk
 
 ### GET Particular Transaction by ID
 GET http://localhost:3000/transactions/1
