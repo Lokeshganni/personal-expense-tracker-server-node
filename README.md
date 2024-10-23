@@ -1,27 +1,30 @@
-#Personal Expense Tracker API
+# Personal Expense Tracker API
 
-###Overview
+## Overview
 
 This is a RESTful API for managing personal financial records, such as incomes and expenses. Users can record their transactions, view past transactions, and get summarized reports by category or time period. The project also includes user authentication to link transactions to specific users.
 
-###Features
+## Features
 
-Add, update, delete, and retrieve income/expense transactions.
-Summarize total income, total expenses, and current balance.
-Optional filtering for summaries by date range and category.
-User authentication with JWT for protecting API routes.
-Pagination for retrieving large numbers of transactions.
-Reports for monthly spending by category.
+- Add, update, delete, and retrieve income/expense transactions.
+- Summarize total income, total expenses, and current balance.
+- Optional filtering for summaries by date range and category.
+- User authentication with JWT for protecting API routes.
+- Pagination for retrieving large numbers of transactions.
+- Reports for monthly spending by category.
 
-###Technologies Used
+## Technologies Used
 
-Backend Framework: Node.js with Express.js
-Database: SQLite
-Authentication: JWT (JSON Web Token)
+Backend Framework:
+- Node.js with Express.js
+Database:
+- SQLite
+Authentication:
+- JWT (JSON Web Token)
 
-Getting Started
+## Getting Started
 
-Prerequisites
+## Prerequisites
 
 Before you can run the project, you need the following:
 
@@ -36,7 +39,8 @@ Clone the repository:
 git clone https://github.com/your-username/personal-expense-tracker.git
 cd personal-expense-tracker-server
 
-## Install the dependencies:
+Install the dependencies:
+
 npm install
 
 Set up the SQLite database:
@@ -66,7 +70,7 @@ Response:
 201 Created if the user is successfully created.
 400 Bad Request if the username already exists.
 
-2. Login (Generate JWT token)
+#### 2. Login (Generate JWT token)
 Endpoint: POST /login
 Request Body:
 
@@ -84,7 +88,7 @@ All transaction-related routes require the user to be authenticated. Send the JW
 
 Authorization: Bearer <JWT_TOKEN>
 
-3. Add Transaction
+#### 3. Add Transaction
 Endpoint: POST /transactions
 Request Body:
 
@@ -100,7 +104,7 @@ Response:
 201 Created with the id of the newly created transaction.
 500 Internal Server Error on failure.
 
-4. Get All Transactions
+#### 4. Get All Transactions
 Endpoint: GET /transactions?page=1&limit=10
 
 Optional Query Parameters:
@@ -111,14 +115,14 @@ Response:
 200 OK with the list of transactions.
 500 Internal Server Error on failure.
 
-5. Get a Transaction by ID
+#### 5. Get a Transaction by ID
 Endpoint: GET /transactions/:id
 
 Response:
 200 OK with the transaction details.
 404 Not Found if the transaction does not exist.
 
-6. Update a Transaction
+#### 6. Update a Transaction
 Endpoint: PUT /transactions/:id
 Request Body (same as Add Transaction)
 
@@ -126,14 +130,14 @@ Response:
 200 OK if the transaction is updated.
 404 Not Found if the transaction does not exist.
 
-7. Delete a Transaction
+#### 7. Delete a Transaction
 Endpoint: DELETE /transactions/:id
 
 Response:
 200 OK if the transaction is deleted.
 404 Not Found if the transaction does not exist.
 
-8. Get Summary
+#### 8. Get Summary
 Endpoint: GET /summary?start_date=2024-01-01&end_date=2024-12-31&category=Salary
 
 Optional Query Parameters:
@@ -144,7 +148,7 @@ category: Filter by category.
 Response:
 200 OK with the total income, total expenses, and balance.
 
-9. Monthly Report
+#### 9. Monthly Report
 Endpoint: GET /report/monthly
 
 Response:
@@ -190,7 +194,7 @@ Content-Type: application/json
 GET http://localhost:3000/summary?start_date=2024-01-01&end_date=2024-12-31&category=Salary
 Authorization: Bearer <JWT_TOKEN>
 
-Project Structure
+## Project Structure
 
 ├── app.js               # Main application file
 ├── db.js                # Database configuration and queries
@@ -198,4 +202,3 @@ Project Structure
 ├── package.json         # Node.js dependencies and scripts
 ├── README.md            # API documentation
 └── app.http             # Optional HTTP file for testing
-
