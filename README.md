@@ -1,10 +1,10 @@
-Personal Expense Tracker API
+#Personal Expense Tracker API
 
-Overview
+###Overview
 
 This is a RESTful API for managing personal financial records, such as incomes and expenses. Users can record their transactions, view past transactions, and get summarized reports by category or time period. The project also includes user authentication to link transactions to specific users.
 
-Features
+###Features
 
 Add, update, delete, and retrieve income/expense transactions.
 Summarize total income, total expenses, and current balance.
@@ -13,7 +13,7 @@ User authentication with JWT for protecting API routes.
 Pagination for retrieving large numbers of transactions.
 Reports for monthly spending by category.
 
-Technologies Used
+###Technologies Used
 
 Backend Framework: Node.js with Express.js
 Database: SQLite
